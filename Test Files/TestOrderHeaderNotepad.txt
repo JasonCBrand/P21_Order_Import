@@ -1,2 +1,4 @@
-1004	100034	Tanner Bolt	TRI	100004	10485		x					z		0				Y				0	0																			0																			0	
-1005	100035	Ace Hardware	TRI	100005	10486									0							Pol	0	0		Mon																	0																			0	
+1	Import Note	Wary	02/30/02	03/30/02	04/31/05	Class 1	N
+2	Import Note	Wary	02/30/03	03/30/04	04/31/07	Class 2	y
+3	Import Note	Wary	02/30/04	03/30/05	04/31/08	Class 3	y
+4	Import Note	Wary	02/30/05	03/30/06	04/31/09	Class 4	N

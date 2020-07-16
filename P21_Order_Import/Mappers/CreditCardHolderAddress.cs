@@ -14,11 +14,11 @@ namespace P21_Order_Import
         [FieldOptional]
         public int? ImportSetNo { get; set; }
         [FieldOptional]
-        public int? CardNumber { get; set; }
+        public string? CardNumber { get; set; }
         [FieldOptional]
-        public int? FirstName { get; set; }
+        public string? FirstName { get; set; }
         [FieldOptional]
-        public DateTime? LasttName { get; set; }
+        public string? LastName { get; set; }
         [FieldOptional]
         public string? StreetAddress1 { get; set; }
         [FieldOptional]
@@ -30,14 +30,16 @@ namespace P21_Order_Import
         [FieldOptional]
         public string? ZipCode { get; set; }
         [FieldOptional]
-        public DateTime? SwitchIssueNumber { get; set; } //10
+        public long? SwitchIssueNumber { get; set; } //10
         [FieldOptional]
-        public DateTime? ReferenceNumber { get; set; }
+        public long? ReferenceNumber { get; set; }
         [FieldOptional]
-        public DateTime? TransactioNID { get; set; }
+        public string? TransactioNID { get; set; }
         [FieldOptional]
-        public List<string?> AVSResponseCode { get; set; }
+        //p21 help file says list but response should be a string like M: street address and postal codes match
+        public string? AVSResponseCode { get; set; } 
         [FieldOptional]
-        public List<string?> CVVResponseCode { get; set; }
+        //p21 help file says list but response should be a string like M: Match
+        public string? CVVResponseCode { get; set; }
     }
 }

@@ -138,21 +138,109 @@ namespace P21_Order_Import
             engine.WriteFile(fname, list);
             MessageBox.Show(@$"File saved to {fname}");
         }
-        public static void SaveRemittanceFile(int rowCount, DataGridView grid)
+        public static void SaveRemittanceFile(int rowCount, DataGridView grid, string fname)
         {
+            var engine = new FileHelperEngine<Remittance>();
+            var list = new List<Remittance>();
 
+            for (int x = 0; x < rowCount; x++)
+            {
+                list.Add(new Remittance()
+                {
+                    ImportSetNo = (int?)grid.Rows[x].Cells[0].Value,
+                    PaymentTypeID = (int?)grid.Rows[x].Cells[1].Value,
+                    PaymentAmount = (int?)grid.Rows[x].Cells[2].Value,
+                    PaymentDate = (DateTime?)grid.Rows[x].Cells[3].Value,
+                    PaymentDesc = grid.Rows[x].Cells[4].Value.ToString() ?? "",
+                    CheckNumber = (string?)grid.Rows[x].Cells[5].Value,
+                    CCName = grid.Rows[x].Cells[6].Value.ToString() ?? "",
+                    CCNumber = grid.Rows[x].Cells[7].Value.ToString() ?? "",
+                    CustomerVerificationValue = grid.Rows[x].Cells[8].Value.ToString() ?? "",
+                    CCExpirationDate = (DateTime?)grid.Rows[x].Cells[9].Value,
+                    CCAuthorizedDate = (DateTime?)grid.Rows[x].Cells[10].Value,
+                    CCAuthorizedNumber = (long?)grid.Rows[x].Cells[11].Value,
+                    Period = (int?)grid.Rows[x].Cells[12].Value,
+                    Year = (long?)grid.Rows[x].Cells[13].Value,
+                    CreditNumber = (long?)grid.Rows[x].Cells[14].Value,
+                    WebProcessingCenterID = (long?)grid.Rows[x].Cells[15].Value
+                });
+
+            }
+            engine.WriteFile(fname, list);
+            MessageBox.Show(@$"File saved to {fname}");
         }
-        public static void SaveCreditCardFile(int rowCount, DataGridView grid)
+        public static void SaveCreditCardFile(int rowCount, DataGridView grid, string fname)
         {
+            var engine = new FileHelperEngine<CreditCardHolderAddress>();
+            var list = new List<CreditCardHolderAddress>();
 
+            for (int x = 0; x < rowCount; x++)
+            {
+                list.Add(new CreditCardHolderAddress()
+                {
+                    ImportSetNo = (int?)grid.Rows[x].Cells[0].Value,
+                    CardNumber = grid.Rows[x].Cells[1].Value.ToString() ?? "",
+                    FirstName = grid.Rows[x].Cells[2].Value.ToString() ?? "",
+                    LastName = grid.Rows[x].Cells[3].Value.ToString() ?? "",
+                    StreetAddress1 = grid.Rows[x].Cells[4].Value.ToString() ?? "",
+                    StreetAddress2 = grid.Rows[x].Cells[5].Value.ToString() ?? "",
+                    City = grid.Rows[x].Cells[6].Value.ToString() ?? "",
+                    State = grid.Rows[x].Cells[7].Value.ToString() ?? "",
+                    ZipCode = grid.Rows[x].Cells[8].Value.ToString() ?? "",
+                    SwitchIssueNumber = (long?)grid.Rows[x].Cells[9].Value,
+                    ReferenceNumber = (long?)grid.Rows[x].Cells[10].Value,
+                    TransactioNID = grid.Rows[x].Cells[11].Value.ToString() ?? "",
+                    AVSResponseCode = grid.Rows[x].Cells[12].Value.ToString() ?? "",
+                    CVVResponseCode = grid.Rows[x].Cells[13].Value.ToString() ?? "",
+                });
+            }
+            engine.WriteFile(fname, list);
+            MessageBox.Show(@$"File saved to {fname}");
         }
-        public static void SaveHeaderNotepadFile(int rowCount, DataGridView grid)
+        public static void SaveHeaderNotepadFile(int rowCount, DataGridView grid, string fname)
         {
+            var engine = new FileHelperEngine<OrderHeaderNotepad>();
+            var list = new List<OrderHeaderNotepad>();
 
+            for (int x = 0; x < rowCount; x++)
+            {
+                list.Add(new OrderHeaderNotepad()
+                {
+                    ImportSetNo = grid.Rows[x].Cells[0].Value.ToString() ?? "",
+                    Topic = grid.Rows[x].Cells[1].Value.ToString() ?? "",
+                    Note = grid.Rows[x].Cells[2].Value.ToString() ?? "",
+                    ActivationDate = grid.Rows[x].Cells[3].Value.ToString() ?? "",
+                    ExpirationDate = grid.Rows[x].Cells[4].Value.ToString() ?? "",
+                    EntryDate = grid.Rows[x].Cells[5].Value.ToString() ?? "",
+                    NotepadClassID = grid.Rows[x].Cells[6].Value.ToString() ?? "",
+                    Mandatory = grid.Rows[x].Cells[7].Value.ToString() ?? "",
+                });
+            }
+            engine.WriteFile(fname, list);
+            MessageBox.Show(@$"File saved to {fname}");
         }
-        public static void SaveLineNotepadFile(int rowCount, DataGridView grid)
+        public static void SaveLineNotepadFile(int rowCount, DataGridView grid, string fname)
         {
+            var engine = new FileHelperEngine<OrderLineNotepad>();
+            var list = new List<OrderLineNotepad>();
 
+            for (int x = 0; x < rowCount; x++)
+            {
+                list.Add(new OrderLineNotepad()
+                {
+                    ImportSetNo = grid.Rows[x].Cells[0].Value.ToString() ?? "",
+                    LineNo = (int?)grid.Rows[x].Cells[1].Value,
+                    Topic = grid.Rows[x].Cells[2].Value.ToString() ?? "",
+                    Note = grid.Rows[x].Cells[3].Value.ToString() ?? "",
+                    ActivationDate = grid.Rows[x].Cells[4].Value.ToString() ?? "",
+                    ExpirationDate = grid.Rows[x].Cells[5].Value.ToString() ?? "",
+                    EntryDate = grid.Rows[x].Cells[6].Value.ToString() ?? "",
+                    NotepadClassID = grid.Rows[x].Cells[7].Value.ToString() ?? "",
+                    Mandatory = grid.Rows[x].Cells[8].Value.ToString() ?? "",
+                });
+            }
+            engine.WriteFile(fname, list);
+            MessageBox.Show(@$"File saved to {fname}");
         }
 
     }

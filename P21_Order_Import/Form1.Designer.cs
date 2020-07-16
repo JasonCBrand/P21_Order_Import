@@ -33,7 +33,6 @@
             this.LineGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.MissingButton = new System.Windows.Forms.Button();
             this.OELineNoteTab = new System.Windows.Forms.TabPage();
             this.LineGridNoteView = new System.Windows.Forms.DataGridView();
             this.OEHdrNoteTab = new System.Windows.Forms.TabPage();
@@ -98,23 +97,13 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(1349, 159);
+            this.exitButton.Location = new System.Drawing.Point(1349, 91);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 5;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // MissingButton
-            // 
-            this.MissingButton.Location = new System.Drawing.Point(1349, 104);
-            this.MissingButton.Name = "MissingButton";
-            this.MissingButton.Size = new System.Drawing.Size(75, 38);
-            this.MissingButton.TabIndex = 6;
-            this.MissingButton.Text = "Find Missing Values";
-            this.MissingButton.UseVisualStyleBackColor = true;
-            this.MissingButton.Click += new System.EventHandler(this.MissingButton_Click);
             // 
             // OELineNoteTab
             // 
@@ -187,9 +176,9 @@
             // RemitGridView
             // 
             this.RemitGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RemitGridView.Location = new System.Drawing.Point(-15, -8);
+            this.RemitGridView.Location = new System.Drawing.Point(-15, -1);
             this.RemitGridView.Name = "RemitGridView";
-            this.RemitGridView.Size = new System.Drawing.Size(1331, 139);
+            this.RemitGridView.Size = new System.Drawing.Size(1331, 127);
             this.RemitGridView.TabIndex = 1;
             // 
             // OEHdrTab
@@ -229,7 +218,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1436, 540);
-            this.Controls.Add(this.MissingButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LineGridView);
@@ -263,7 +251,6 @@
         private System.Windows.Forms.DataGridView LineGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button MissingButton;
         private System.Windows.Forms.TabPage OELineNoteTab;
         public System.Windows.Forms.DataGridView LineGridNoteView;
         private System.Windows.Forms.TabPage OEHdrNoteTab;

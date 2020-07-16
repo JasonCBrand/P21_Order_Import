@@ -18,6 +18,7 @@ namespace P21_Order_Import
         [FieldOptional]
         public int? PaymentAmount { get; set; }
         [FieldOptional]
+        [FieldConverter(ConverterKind.Date, "MM/dd/yy")]
         public DateTime? PaymentDate { get; set; }
         [FieldOptional]
         public string? PaymentDesc { get; set; }
@@ -30,17 +31,19 @@ namespace P21_Order_Import
         [FieldOptional]
         public string? CustomerVerificationValue { get; set; }
         [FieldOptional]
+        [FieldConverter(ConverterKind.Date, "MM/dd/yy")]
         public DateTime? CCExpirationDate { get; set; } //10
         [FieldOptional]
+        [FieldConverter(ConverterKind.Date, "MM/dd/yy")]
         public DateTime? CCAuthorizedDate { get; set; }
         [FieldOptional]
-        public DateTime? CCAuthorizedNumber { get; set; }
+        public long? CCAuthorizedNumber { get; set; }
         [FieldOptional]
         public int? Period { get; set; }
         [FieldOptional]
         public long? Year { get; set; }
         [FieldOptional]
-        public string? CreditNumber { get; set; }
+        public long? CreditNumber { get; set; }
         [FieldOptional]
         public long? WebProcessingCenterID { get; set; }
         
